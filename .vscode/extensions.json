@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "mikestead.dotenv",
+    "onecentlin.laravel5-snippets",
+    "xdebug.php-debug",
+    "EditorConfig.EditorConfig"
+  ]
+}

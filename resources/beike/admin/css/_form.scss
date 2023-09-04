@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+/**
+ * @copyright     2022 beikeshop.com - All Rights Reserved.
+ * @link          https://beikeshop.com
+ * @Author        pu shuo <pushuo@guangda.work>
+ * @Date          2022-08-02 19:19:52
+ * @LastEditTime  2022-09-16 19:04:56
+ */
+
+.form-group {
+  .form-control {
+    &.short {
+      max-width: 300px;
+    }
+  }
+
+  .input-group {
+    &.short {
+      max-width: 300px;
+    }
+  }
+
+  .col-form-label {
+    text-align: right;
+  }
+}

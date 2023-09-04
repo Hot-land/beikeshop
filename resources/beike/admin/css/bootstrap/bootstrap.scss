@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+/**
+ * @copyright     2022 beikeshop.com - All Rights Reserved.
+ * @link          https://beikeshop.com
+ * @Author        pu shuo <pushuo@guangda.work>
+ * @Date          2022-08-17 19:26:53
+ * @LastEditTime  2022-09-16 19:07:21
+ */
+
+$primary: #fd560f;
+$success: #71c20b;
+$info: #1a8eff;
+$body-bg: #f9fbfd;
+
+$font-family-base: 'poppins', sans-serif;
+$border-radius: 0.2rem;
+$btn-border-radius: 0.2rem;
+$btn-border-radius-sm: 0.2rem;
+$btn-border-radius-lg: 0.2rem;
+$input-btn-focus-box-shadow: 0 0 11px 0 rgba($color: $primary, $alpha: .1);
+$input-bg: #fff;
+$form-select-focus-box-shadow: 0 0 11px 0 rgba($color: $primary, $alpha: .1);
+
+// $btn-border-width: 0;
+$font-size-base: 0.82rem;
+$form-check-input-width: 1.2em;
+$form-switch-width: 2.6em;
+$link-decoration: none;
+$link-color: #1890ff;
+$form-floating-input-padding-t: 1.325rem;
+$form-floating-input-padding-b: .625rem;
+$form-floating-padding-y: .9rem;
+$form-floating-height: 50px;
+$btn-focus-width: 0;
+$table-border-color: #e9ecef;
+$table-bg: transparent;
+$border-color: #e8e8e8;
+$input-border-color: #e2e2e2;
+$badge-border-radius: 2px;
+$text-muted: #95aac9;
+
+$card-border-radius: .4rem;
+$card-border-color: rgba(231, 234, 243, 0.7);
+$card-box-shadow: 0 0.375rem 0.75rem rgba(140,152,164,.075);
+$card-spacer-y: 1.2rem;
+$card-spacer-x: 1.2rem;
+$card-bg: #fff;
+
+$form-feedback-icon-valid: none;
+$form-feedback-icon-valid-color: inherit;
+
+$alert-padding-y: 0.5rem;
+
+$nav-link-color: #555;
+$nav-link-hover-color: #555;
+$nav-tabs-link-active-color: #222;
+
+$pagination-border-width: 0;
+$pagination-bg: #f4f4f5;
+$pagination-color: #606266;
+$pagination-border-radius: 2px;
+$pagination-disabled-bg: $pagination-bg;
+$pagination-disabled-color: #c0c4cc;
+$pagination-hover-color: $primary;
+$pagination-padding-x: 4px;
+$pagination-padding-y: .3rem;
+$pagination-focus-color: #606266;
+
+$dropdown-box-shadow: 0 0.8rem 2.5rem 0.6125rem rgba(140, 152, 164, 0.286);
+$dropdown-item-padding-y:  0.45rem;
+$dropdown-border-color:  rgba(0, 0, 0, 0.064);
+// $dropdown-border-color: transparent;
+$dropdown-border-radius: 0.4rem;
+$dropdown-bg :#fff;
+
+@import './bootstrap-icons';
+@import 'node_modules/bootstrap/scss/bootstrap';
+// @import 'node_modules/bootstrap/scss/bootstrap';
+
+.table> :not(:first-child) {
+  border-top: none;
+}
+
+.btn-primary {
+  color: #fff !important;
+}
+
+.form-switch {
+  margin-bottom: 0;
+
+  .form-check-input {
+    width: 3em;
+    height: 1.6em;
+  }
+}
+
+.badge.bg-success-soft {
+  color: #00d97e;
+  background-color: #ccf7e5;
+}
+
+.btn-link {
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.was-validated {
+  .form-control,
+  .form-select {
+    &:valid {
+      border-color: $input-border-color;
+    }
+  }
+
+  .form-check-input {
+    &:valid {
+      border-color: rgba(#000, .25);
+
+      &:checked {
+        background-color: $primary;
+        border-color: $primary;
+      }
+
+      &~.form-check-label {
+        color: inherit;
+      }
+    }
+  }
+}

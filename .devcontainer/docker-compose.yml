@@ -1,0 +1,62 @@
+version: '3.9'
+
+services:
+  workspace:
+    build:
+      context: ./docker/workspace
+    tty: true
+    volumes:
+      - ../:/var/www
+      - ./docker/workspace/config/php.ini:/usr/local/etc/php/conf.d/99-php.ini
+
+  php:
+    build:
+      context: ./docker/php
+    volumes:
+      - ./docker/php/config/php.ini:/usr/local/etc/php/php.ini
+      - ./docker/php/config/xdebug.ini:/user/local/etc/php/conf.d/xdebug.ini
+      - ../:/var/www
+    working_dir: /var/www
+
+  mysql:
+    image: mysql/mysql-server:8.0
+    ports:
+      - 3307:3306
+    volumes:
+      - mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_DATABASE=laravel
+    command:
+      - mysqld
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_ja_0900_as_cs_ks
+
+  redis:
+    image: redis:7.0
+    ports:
+      - 6379:6379
+    volumes:
+      - redis:/data
+
+  redisinsight:
+    image: redislabs/redisinsight:latest
+    ports:
+      - 8001:8001
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8888:80
+    environment:
+      - PMA_HOST=mysql
+    depends_on:
+      - mysql
+
+volumes:
+  mysql:
+    driver: local
+  redis:
+    driver: local

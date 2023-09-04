@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+/**
+ * @copyright     2022 beikeshop.com - All Rights Reserved.
+ * @link          https://beikeshop.com
+ * @Author        pu shuo <pushuo@guangda.work>
+ * @Date          2022-08-02 19:19:52
+ * @LastEditTime  2022-09-16 19:05:52
+ */
+
+.sidebar-box {
+  direction: ltr;
+  transition: all .2s ease-in-out;
+  background: #fff;
+
+  @media (max-width: 768px) {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    visibility: hidden;
+    z-index: 99;
+    height: calc(100% - 54px);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &.active {
+    @media (max-width: 768px) {
+      visibility: visible;
+    }
+
+    .sidebar-info {
+      left: 0;
+    }
+  }
+
+  .sidebar-info {
+    display: flex;
+    height: 100%;
+    transition: all .2s ease-in-out;
+
+    @media (max-width: 768px) {
+      position: absolute;
+      left: -100%;
+      bottom: 0;
+      z-index: 999;
+      border-top: 1px solid #eee;
+    }
+
+    > .left {
+      padding-top: 8px;
+      min-width: 92px;
+      // background-color: #eff3f7;
+      // background-color: #dce5ee;
+      // background-color: #e4ebf2;
+      background-color: #ebf1f6;
+      max-width: 130px;
+
+      // 背景图
+      background-image: url('/image/admin-menu.png');
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: contain;
+
+      ul {
+        li {
+          position: relative;
+
+          a {
+            padding: 1rem .5rem 1rem .8rem;
+            color: #333;
+            display: flex;
+            text-decoration: none;
+            // 文字强制换行
+            // word-break: break-all;
+
+            i {
+              margin-right: 7px;
+            }
+          }
+
+          &.active {
+            a {
+              font-weight: bold;
+            }
+          }
+
+          &.active, &:hover {
+            background-color: #fff;
+
+            body.admin-home & {
+              background-color: #f9fbfd;
+            }
+
+            &:before, &:after {
+              display: block;
+            }
+          }
+
+          &:before, &:after {
+            content: "";
+            position: absolute;
+            right: 0;
+            width: 8px;
+            height: 8px;
+            overflow: hidden;
+            display: none;
+            background: radial-gradient(circle closest-side,transparent 0,transparent 50%,#fff 0) 200% 200%/400% 400%;
+          }
+
+          &:before {
+            top: -8px;
+          }
+
+          &:after {
+            bottom: -8px;
+            transform: scaleY(-1);
+            // transform:rotate(180deg);
+          }
+        }
+      }
+    }
+
+    > .right {
+      min-width: 120px;
+      padding: 0 .5rem;
+      background-color: #fff;
+      overflow-y: auto;
+      max-width: 200px;
+
+      @media (min-width: 768px) {
+        border-right: 1px solid #f1f1f1;
+      }
+
+      > .title {
+        padding: 1rem;
+        margin-top: .3rem;
+        margin-bottom: 0;
+      }
+
+      .navbar-nav {
+        > li.nav-item {
+          position: relative;
+          margin-bottom: .7rem;
+
+          a {
+            padding: .5rem 1rem;
+            color: #333;
+            transition: all .1s ease-in-out;
+            border-radius: .3rem;
+
+            &:hover {
+              background-color: rgba(189, 197, 209, 0.2);
+            }
+
+            i {
+              margin-right: 7px;
+            }
+          }
+
+          &.active {
+            a {
+              // background-color: rgba(189, 197, 209, 0.2);
+              position: relative;
+              color: $primary;
+
+              &::after {
+                // content: "\F138";
+                content: "\F135";
+                position: absolute;
+                right: 0;
+                top: 50%;
+                line-height: 1;
+                margin-top: -6px;
+                font-family: "bootstrap-icons";
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

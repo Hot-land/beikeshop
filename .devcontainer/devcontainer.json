@@ -1,0 +1,19 @@
+{
+  "name": "PHP Development",
+  "dockerComposeFile": [
+    "docker-compose.yml"
+  ],
+  "service": "workspace",
+  "workspaceFolder": "/var/www",
+  "remoteUser": "vscode",
+  "extensions": [
+	"mikestead.dotenv",
+	"onecentlin.laravel5-snippets",
+	"xdebug.php-debug",
+	"EditorConfig.EditorConfig"
+],
+  "forwardPorts": [
+    8000
+  ]//,
+  //"postCreateCommand": "/bin/sh /var/www/init.sh"
+}

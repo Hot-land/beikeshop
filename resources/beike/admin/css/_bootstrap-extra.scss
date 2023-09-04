@@ -1,0 +1,309 @@
+@charset "UTF-8";
+
+/**
+ * @copyright     2022 beikeshop.com - All Rights Reserved.
+ * @link          https://beikeshop.com
+ * @Author        pu shuo <pushuo@guangda.work>
+ * @Date          2022-08-02 19:19:52
+ * @LastEditTime  2022-09-16 19:04:40
+ */
+
+hr.horizontal {
+  background-color: transparent;
+  height: 1px;
+  margin: 1rem 0;
+  color: inherit;
+  border: 0;
+  opacity: .25;
+}
+
+hr.horizontal.dark {
+  background-image: linear-gradient(90deg,transparent,rgba(0,0,0,.4),transparent);
+}
+
+.nav-tabs {
+  .nav-item {
+    .nav-link {
+      &.error-invalid {
+        color: #dc3545 !important;
+        font-weight: bold;
+        position: relative;
+        padding-left: 17px !important;
+
+        &:before {
+          content: '\F333';
+          left: 0;
+          top: 1px;
+          font-family: 'bootstrap-icons';
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+
+.nav-tabs.nav-bordered {
+  // border-width: 2px;
+
+  .nav-item {
+    margin-left: 0.65rem;
+    margin-right: 0.65rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .nav-link {
+      color: #6c757d;
+      border: none;
+      padding: 0 1rem 0.7rem;
+
+      &.active {
+        color: $primary;
+        // color: #12263f;
+        // color: #1a1a1a;
+        font-weight: bold;
+        background-color: transparent;
+        border-bottom: 2px solid $primary;
+      }
+    }
+  }
+}
+
+.card {
+  // box-shadow: rgba(0, 0, 0, .1) 0px 1px 4px 0px;
+  box-shadow: 0 0.375rem 0.75rem rgba(140,152,164,.075);
+
+  .card-header {
+    // padding: 1rem 1rem .3rem;
+    padding-top: 1.3rem;
+    padding-bottom: 0;
+    background-color: #fff;
+    font-weight: bold;
+    // font-size: .8rem;
+    border-bottom: 0 solid rgba(0,0,0,.125);
+
+    &:first-child {
+      border-radius: 1rem 1rem 0 0;
+    }
+
+    .card-title {
+      margin-bottom: 0;
+      padding-left: 10px;
+      border-left: 3px solid $primary;
+      line-height: 1;
+    }
+  }
+
+  .card-body {
+    // padding: 1rem;
+  }
+}
+
+table.table {
+  thead {
+    th {
+      // background-color: #f9fbfd;
+      background-color: #f5f7f8;
+      // color: #74859e;
+      padding-top: .7rem;
+      padding-bottom: .7rem;
+      font-size: .825rem;
+      border-top-width: 0;
+      border-bottom: none;
+      white-space:nowrap;
+    }
+  }
+
+  td {
+    // border-bottom: 0;
+    font-size: .8125rem;
+    vertical-align: middle;
+    // border-top: 1px solid #edf2f9;
+  }
+
+  &.table-striped>tbody>tr {
+    &:nth-of-type(odd) {
+      background: transparent;
+    }
+    &:nth-of-type(2n) {
+      background: #f9fbfd;
+    }
+  }
+}
+
+.form-group {
+  margin-bottom: 1.375rem;
+}
+
+.btn {
+  font-size: 0.8rem;
+}
+
+.btn-check {
+  position: absolute;
+  clip: rect(0,0,0,0);
+  pointer-events: none;
+}
+
+.btn-group-radio {
+  .btn-group {
+    label {
+      &:first-of-type {
+        border-top-left-radius: .25rem;
+        border-bottom-left-radius: .25rem;
+      }
+    }
+  }
+
+  .btn-check:active+.btn-outline-primary, .btn-check:checked+.btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+  }
+
+  &.btn-group-radio-pay {
+    .btn-check:active+.btn, .btn-check:checked+.btn, .btn.active, .btn.dropdown-toggle.show, .btn:active {
+      color: #fff;
+      background-color: transparent;
+      padding: .32rem .70rem;
+      border: 2px solid #0d6efd;
+      // border-color: #0d6efd;
+    }
+
+    .btn-group-radios {
+      display: flex;
+    }
+
+    label.btn {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ddd;
+
+      &:hover {
+        border-color: #0d6efd;
+      }
+    }
+
+    img {
+      max-width: 140px;
+      height: 42px;
+    }
+  }
+}
+
+.bd-callout {
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #eee;
+  border-left-width: .25rem;
+  border-radius: .25rem;
+
+  &.bd-callout-info {
+    border-left-color: #5bc0de;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+
+.col-xxl-20 {
+  @media (min-width: 1400px) {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+.form-control {
+  // border-radius: 2px;
+  // font-size: 0.7rem;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.form-max-w {
+  max-width: 560px;
+}
+
+.error-invalid-input {
+  border-color: #dc3545;
+  padding-right: calc(1.5em + 0.75rem);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.input-for-group {
+  span.input-group-text {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+  input {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    margin-left: -1px;
+  }
+}
+
+.pagination {
+  > li {
+    margin: 0 5px;
+    font-weight: bold;
+    a, span {
+      text-align: center;
+      border-radius: 2px !important;
+      min-width: 30px;
+    }
+  }
+}
+
+.dropdown-menu {
+  box-shadow: 0 .5rem 2rem 0.125rem rgba(140, 152, 164, 0.286);
+}
+
+.input-locale-wrap {
+  > .input-for-group, .input-group {
+    & + .input-for-group, & + .input-group {
+      margin-top: -1px;
+    }
+
+    input, span, textarea {
+      border-radius: 0;
+    }
+
+    // 选择第一个
+    &:first-child {
+      input, textarea {
+        border-top-right-radius: 0.2rem;
+      }
+
+      span {
+        border-top-left-radius: 0.2rem;
+      }
+    }
+
+    // 选择最后一个
+    &:last-child {
+      input, textarea {
+        border-bottom-right-radius: 0.2rem;
+      }
+
+      span {
+        border-bottom-left-radius: 0.2rem;
+      }
+    }
+  }
+}

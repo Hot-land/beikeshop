@@ -1,0 +1,542 @@
+@charset "UTF-8";
+
+/**
+ * @copyright     2022 beikeshop.com - All Rights Reserved.
+ * @link          https://beikeshop.com
+ * @Author        pu shuo <pushuo@guangda.work>
+ * @Date          2022-08-24 17:24:33
+ * @LastEditTime  2022-09-16 19:05:06
+ */
+
+
+@font-face {font-family: 'poppins';
+  src: url('/fonts/poppins/Poppins-Regular.ttf');
+}
+
+@font-face {font-family: 'poppins';
+  src: url('/fonts/poppins/Poppins-Bold.ttf');
+  font-weight: bold;
+}
+
+@font-face {font-family: 'Poppins-Medium';
+  src: url('/fonts/poppins/Poppins-Medium.ttf');
+}
+
+@for $i from 1 through 6 {
+  .min-h#{$i} {
+    min-height: #{$i}00px;
+  }
+}
+
+@media (min-width: 768px) {
+  // 生成 100 200 300 ... 1000 的宽度
+  @for $i from 1 through 10 {
+    .wp-#{$i}00 {
+      width: #{$i}00px;
+    }
+  }
+  // clac(100% - #{$i}00px)
+  @for $i from 1 through 10 {
+    .wp-#{$i}00- {
+      width: calc(100% - #{$i}00px);
+    }
+  }
+  // 生成 100 200 300 ... 1000 的高度
+  @for $i from 1 through 10 {
+    .hp-#{$i}00 {
+      height: #{$i}00px;
+    }
+  }
+}
+
+// 生成 100 200 300 ... 1000 的最小高度
+@for $i from 1 through 10 {
+  .h-min-#{$i}00 {
+    min-height: #{$i}00px;
+  }
+}
+
+// 生成 100 200 300 ... 1000 的最小宽度
+@for $i from 1 through 10 {
+  .w-min-#{$i}00 {
+    min-width: #{$i}00px;
+  }
+}
+
+// 生成 100 200 300 ... 1000 的最大宽度
+@for $i from 1 through 10 {
+  .w-max-#{$i}00 {
+    max-width: #{$i}00px;
+  }
+}
+
+
+
+// 生成 10 20 30 ... 90 的高宽
+@for $i from 1 through 10 {
+  .wh-#{$i}0 {
+    height: #{$i}0px;
+    width: #{$i}0px;
+  }
+}
+
+.max-h-100 {
+  max-height: 100%;
+}
+
+.col-form-label.required {
+  &::before {
+    content: "*";
+    color: #f56c6c;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+}
+
+
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-scroll {
+  cursor: all-scroll;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.help-text {
+  color: #B2B2B2;
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.font-size-12 {
+  font-size: 12px;
+}
+
+.open-file-manager {
+  cursor: pointer;
+}
+
+.file-manager-box {
+  .layui-layer-title {
+    background-color: #293042;
+    color: #fff;
+    border-color: #404e72;
+  }
+
+  .layui-layer-ico {
+    background: url('/image/close.png') no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+.border-dashed {
+  border-style: dashed !important;
+}
+
+.set-product-img {
+  background-color: #f8f8f8;
+  border: 1px dashed #e2e2e2;
+  display: flex;
+  cursor: pointer;
+  align-items: center; // flex-start | center
+  justify-content: center; // flex-end | center | space-between
+  transition: all .2s ease;
+  &:hover {
+    background-color: #f1f1f1;
+  }
+}
+
+.main-content {
+  display: flex;
+  // flex-direction: column;
+  // min-height: 100vh;
+  transition: margin-left .25s ease-in-out,left .25s ease-in-out,margin-right .25s ease-in-out,right .25s ease-in-out;
+  width: 100%;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+
+  @media screen and (max-width: 991px) {
+    margin-left: 260px;
+  }
+
+  &:not(.active) {
+    margin-left: 0;
+  }
+
+  > #content {
+    flex: 1;
+    padding: 0 1rem 4rem;
+    // margin-top: 44px;
+    overflow-y: auto;
+
+    @media screen and (max-width: 991px) {
+      padding: 0 1rem 1.5rem;
+    }
+  }
+}
+
+.page-title-box {
+  height: 64px;
+
+  .page-title {
+    font-size: 1rem;
+    margin: 0;
+    // line-height: 35px;
+    // color: #12263f;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: inherit;
+  }
+}
+
+.switch-plus {
+  position: relative;
+  width: 50px;
+  height: 24px;
+  margin-bottom: 1rem;
+
+  input {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+    height: 20px;
+    width: 50px;
+    left: 0;
+    margin: 0;
+
+    &:checked {
+      z-index: 1;
+
+      & + label {
+        opacity: 1;
+        cursor: default;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+
+      ~ .toggle-outside .toggle-inside {
+        left: 0.25rem;
+        background-color: #fff;
+        box-shadow: 0 3px 6px 0 rgba(140,152,164,.25);
+      }
+    }
+
+    & ~ input:checked ~ .toggle-outside  {
+      background-color: $primary;
+
+      .toggle-inside {
+        left: 23px;
+        background-color: #fff;
+      }
+    }
+  }
+
+  label {
+    color: #fff;
+    opacity: 0.33;
+    transition: opacity 0.25s ease;
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    display: inline-block;
+    width: 50px;
+    height: 100%;
+    margin: 0;
+    text-align: center;
+
+    &:last-of-type {
+      margin-left: 50px;
+    }
+  }
+
+  .toggle-outside {
+    height: 100%;
+    border-radius: 2rem;
+    padding: 2px;
+    overflow: hidden;
+    transition: 0.25s ease all;
+    // background: #f1f3fa;
+    background-color: #e7eaf3;
+    position: absolute;
+    width: 46px;
+    left: 0;
+  }
+
+  .toggle-inside {
+    border-radius: 50%;
+    // background: #4a4a4a;
+    position: absolute;
+    transition: 0.25s ease all;
+    height: 20px;
+    width: 20px;
+  }
+}
+
+body.page-seller-product {
+  .share-link-pop {
+    .share-links-td {
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+    .share-links-code {
+      width: 80px;
+      height: 80px;
+      overflow: hidden;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.filter-title {
+  flex: 0 0 56px;
+  margin-right: 10px;
+  text-align: right;
+  margin-bottom: 0;
+}
+
+.order-by-wrap {
+  i {
+    line-height: 0.6;
+    cursor: pointer;
+    &:hover {
+      color: #000;
+    }
+
+    &:active {
+      color: $primary;
+    }
+  }
+}
+
+.layui-layer-btn {
+  .layui-layer-btn0 {
+    border: 1px solid #dedede;
+    color: #333;
+    background-color: #fff;
+  }
+
+  .layui-layer-btn1 {
+    background-color: $primary;
+    border-color: $primary;
+    color: #fff;
+  }
+}
+
+table.table thead th, .fw-bold, h1,h2,h3, h4, h5, h6, b, strong, .card .card-header {
+  font-family: 'Poppins-Medium', sans-serif;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+
+// 处理 el-form 表单在非中文情况下的 显示问题
+@media (min-width: 768px) {
+  body:not(.zh_cn) {
+    .el-form:not(.el-form--label-top) {
+      .el-form-item {
+        .el-form-item__label {
+          line-height: 1.3;
+          font-size: 13px;
+          margin-top: 13px;
+        }
+      }
+    }
+  }
+}
+
+.el-form.el-form--label-top {
+  .el-form-item__label {
+    line-height: inherit;
+  }
+}
+
+@media (max-width: 768px) {
+  .wp-200.text-end {
+    text-align: left !important;
+  }
+
+  .col-auto {
+    flex: 1 0 auto !important;
+  }
+
+  .table-push {
+    white-space: nowrap;
+    overflow: hidden;
+    overflow-x: auto;
+    -webkit-backface-visibility: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    & + .el-pagination {
+      margin-top: 20px;
+    }
+  }
+
+  .el-form--inline .el-form-item__label {
+    text-align: left;
+  }
+
+  .el-form--inline .el-form-item__content {
+    width: 100%;
+  }
+
+  .el-form-item__label {
+    text-align: left;
+    width: 100% !important;
+  }
+
+  .el-form-item__content {
+    margin-left: 0 !important;
+  }
+
+  .table {
+    margin-bottom: 0;
+  }
+
+  .el-dialog {
+    width: 95% !important;
+  }
+
+  .text-hidden {
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:1;
+  }
+
+  .input-group-text {
+    width: 100px;
+  }
+
+  .row > * {
+    margin-top: 0.2rem
+  }
+
+  .el-message-box {
+    width: 90%;
+  }
+
+  .el-form-item {
+    margin-bottom: 10px;
+  }
+
+  .layui-layer-iframe {
+    width: 100% !important;
+    left: 0 !important;
+  }
+
+  .tox .tox-toolbar--scrolling {
+    flex-wrap: wrap !important;
+  }
+}
+
+.swal2-confirm:focus {
+  box-shadow: none !important;
+}
+
+.order-top-info {
+  table {
+    tr {
+      td:first-of-type {
+        width: 40%;
+
+        html[lang="zh_cn"] &, html[lang="zh_hk"] &, html[lang="en"] &, html[lang="ja"] & {
+          width: 90px;
+        }
+      }
+    }
+  }
+}
+
+.autocomplete-group-wrapper {
+  .inline-input {
+    width: 100%;
+  }
+
+  .item-group-wrapper {
+    padding: 10px;
+    min-height: 280px;
+    overflow: auto;
+    background-color: #f5f5f5;
+    // border: 1px solid #e3e3e3;
+
+    .item {
+      overflow: hidden;
+      position: relative;
+      padding: 5px 8px;
+      margin-bottom: 4px;
+      background: #fff;
+      border: 1px solid #eee;
+      cursor: move;
+      display: flex;
+      align-items: center; // flex-start | center
+      justify-content: space-between; // flex-end | center | space-between
+      &:hover {
+        border-color: #aaa;
+      }
+
+      div {
+        display: flex;
+        line-height: 1;
+        width: calc(100% - 16px);
+        align-items: center; // flex-start | center
+
+        i {
+          margin-right: 4px;
+        }
+      }
+
+      span {
+        font-size: 12px;
+        overflow: hidden;
+        padding: 2px 0;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+
+      i {
+        // position: absolute;
+        color: #999;
+        font-weight: 400;
+        &.right {
+          cursor: pointer;
+
+          &:hover {
+            color: #222;
+          }
+        }
+      }
+    }
+  }
+}
+
+.active-line {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 1rem);
+    background-color: rgba($primary, 0.04);
+    border: 1px dashed rgba($primary, 0.5);
+  }
+}

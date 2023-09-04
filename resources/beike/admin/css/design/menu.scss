@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+/**
+ * @copyright     2022 beikeshop.com - All Rights Reserved.
+ * @link          https://beikeshop.com
+ * @Author        pu shuo <pushuo@guangda.work>
+ * @Date          2022-08-13 16:40:46
+ * @LastEditTime  2022-09-16 19:07:08
+ */
+
+.design-wrap {
+  flex-wrap: wrap;
+
+  .menus-wrap {
+    > div {
+      cursor: pointer;
+      &:not(.list-group-item-primary):hover {
+        background-color: #f5f5f5;
+      }
+    }
+  }
+
+  .left {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+
+    .menus-wrap {
+      display: flex;
+      > div {
+        position: relative;
+        border: 1px solid transparent;
+        background-color: #f3f3f3;
+
+        &.active {
+          background-color: #fff;
+          border-color: #fd560f;
+
+          @media (min-width: 768px) {
+            border-bottom: none;
+
+            &:before {
+              display: block;
+            }
+          }
+
+        }
+
+        &:before {
+          content: '';
+          display: none;
+          width: calc(100% + 2px);
+          position: absolute;
+          top: 100%;
+          left: -1px;
+          height: 11px;
+          background-color: #fff;
+          border-left: 1px solid #fd560f;
+          border-right: 1px solid #fd560f;
+        }
+      }
+
+      .link-selector-wrap {
+        .selector-type .title {
+          border: none;
+          padding: 8px 16px 8px 6px;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .right {
+    border: 1px solid #fd560f;
+    padding: 14px;
+
+    .children-group-wrap {
+      .group-item {
+        flex: 0 0 calc(20% - 20px);
+        box-shadow: none;
+        border-color: #f2f2f2 !important;
+
+        .group-children-info {
+          .children-item {
+            background-color: #f5f5f5;
+
+            .link-selector-wrap {
+              // flex: 1;
+              width: calc(100% - 34px);
+
+              .selector-type .title {
+                border: none;
+                background-color: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

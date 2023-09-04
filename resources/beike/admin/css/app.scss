@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+/**
+ * @copyright     2022 beikeshop.com - All Rights Reserved.
+ * @link          https://beikeshop.com
+ * @Author        pu shuo <pushuo@guangda.work>
+ * @Date          2022-08-12 15:27:15
+ * @LastEditTime  2022-09-16 19:06:12
+ */
+
+
+$primary: #fd560f;
+
+@import 'global';
+@import 'vue';
+@import 'sidebar';
+@import 'header';
+@import 'bootstrap-extra';
+@import 'iconfont';
+@import 'dashboard';
+@import 'subscription';
+@import 'form';
+@import 'element-ui';
+@import 'login';
+@import 'page-product';
+@import 'marketing';
+@import 'autocomplete';
+@import 'page-category';
+@import './design/menu';
+@import './page-theme';
