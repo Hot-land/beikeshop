@@ -10,7 +10,8 @@ RUN docker-php-ext-enable redis
 RUN pecl install xdebug-3.1.1
 RUN docker-php-ext-enable xdebug
 RUN docker-php-ext-install bcmath
-RUN docker-php-ext-install gd
+RUN apt-get install -y libjpeg-dev && docker-php-ext-configure gd --with-jpeg && docker-php-ext-install gd
+#RUN docker-php-ext-install gd
 RUN docker-php-ext-install intl
 RUN docker-php-ext-install pdo_mysql
 RUN docker-php-ext-install xml

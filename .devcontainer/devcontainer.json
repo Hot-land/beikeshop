@@ -14,6 +14,7 @@
 ],
   "forwardPorts": [
     8000
-  ]//,
+  ]
+
   //"postCreateCommand": "/bin/sh /var/www/init.sh"
 }
